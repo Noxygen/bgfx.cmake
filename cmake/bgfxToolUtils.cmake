@@ -591,7 +591,8 @@ if(TARGET bgfx::shaderc)
 		foreach(SHADER_FILE ${ARGS_SHADERS})
 			source_group("Shaders" FILES "${SHADER}")
 			get_filename_component(SHADER_FILE_BASENAME ${SHADER_FILE} NAME)
-			get_filename_component(SHADER_FILE_NAME_WE ${SHADER_FILE} NAME_WE)
+			get_filename_component(SHADER_FILE_NAME_WE ${SHADER_FILE} NAME_WLE)
+			string(REPLACE "." "_" SHADER_FILE_NAME_WE ${SHADER_FILE_NAME_WE})
 			get_filename_component(SHADER_FILE_ABSOLUTE ${SHADER_FILE} ABSOLUTE)
 
 			# Build output targets and their commands
